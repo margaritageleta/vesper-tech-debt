@@ -1,1 +1,7 @@
 data/*
+
+# Jupyter Notebook
+notebooks/.ipynb_checkpoints/
+
+# MacOS users
+.DS_Store
