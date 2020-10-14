@@ -1,5 +1,5 @@
 # Data folder
-data/*
+data/technical_debt/
 
 # Jupyter Notebook
 notebooks/.ipynb_checkpoints/
