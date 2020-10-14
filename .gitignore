@@ -1,3 +1,4 @@
+# Data folder
 data/*
 
 # Jupyter Notebook
@@ -5,3 +6,6 @@ notebooks/.ipynb_checkpoints/
 
 # MacOS users
 .DS_Store
+
+# Python virtual environment
+vesper_env/
