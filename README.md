@@ -37,7 +37,7 @@ $ deactivate
 With the environment activated:
 
 ```
-$ pip install -r requirements.txt 
+(vesper_env) $ pip install -r requirements.txt 
 ```
 
 
@@ -45,7 +45,16 @@ $ pip install -r requirements.txt
 **4. Add new packages to the project, if needed**
 
 ```
-$ pip install new_package_name
-$ pip freeze -l > requirements.txt 
+(vesper_env) $ pip install new_package_name
+(vesper_env) $ pip freeze -l > requirements.txt 
 ```
 
+
+
+# Install a Jupyter kernel
+
+This will install a kernel inside the environment, to use to run in the Jupyter notebook there:
+
+```
+(vesper_env) $ ipython kernel install --user --name=vesper_env
+```
