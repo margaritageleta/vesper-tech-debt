@@ -9,3 +9,4 @@ data/technical_debt/
 
 # Python virtual environment
 vesper_env/
+env/
