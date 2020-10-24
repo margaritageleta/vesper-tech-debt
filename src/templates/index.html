@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+    <head>
+        <link rel='stylesheet' type='text/css' href='style.css'>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"> 
+    </head>
+
+    <body>
+        <div>
+            <h1>Vesper's Commit Severity Predictor</h1>
+        </div>
+
+        <div>
+            <form action='/predict' method='POST' autocomplete="on">
+                <label class='commit-message'>Commit message</label>
+                <textarea class='commit-message' id='commit-message' name='commit-message' placeholder='Enter your commit message'></textarea>
+                <label class="lines">Number of lines</label>
+                <input type="number" class="lines" id="lines" name="lines" value=0>
+                <label class="commented-lines">Number of commented lines</label>
+                <input type="number" class="commented-lines" id="commented-lines" name="commented-lines" value=0>
+                <label class="duplicated-lines">Number of duplicated lines</label>
+                <input type="number" class="duplicated-lines" id="duplicated-lines" name="duplicated-lines" value=0>
+                <div class="submit-wrapper">
+                    <input type="submit">
+                </div>
+            </form>
+        </div>
+
+        <div>
+            <h3 style="color: {{ color }};"> {{ severity }} </h3>
+        </div>
+    </body>
+</html>
