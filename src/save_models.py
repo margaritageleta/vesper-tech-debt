@@ -11,6 +11,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, log_loss
+from sklearn.preprocessing import StandardScaler
 
 def escape_special_chars(s):
 
@@ -66,6 +67,11 @@ if __name__ == "__main__":
             ], axis = 1)
     df['commitMessageClean'] = df['commitMessage'].apply(lambda x: clean(x))
     df = df.drop_duplicates().copy()
+
+    # Standardize features by removing the mean and scaling to unit variance.
+    scaler = StandardScaler()
+    scaler.fit(df[['lines','commentLines','duplicatedLines']])
+    df[['lines','commentLines','duplicatedLines']] = scaler.fit_transform(df[['lines','commentLines','duplicatedLines']])
 
     tf_idf = TfidfVectorizer(min_df = 20, max_df = 0.5, ngram_range = (1, 3), max_features = 5000, stop_words = 'english')
     tf_idf.fit(df['commitMessageClean'])
