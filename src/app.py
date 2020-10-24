@@ -7,7 +7,19 @@ import pandas as pd
 import os
 
 # Print current dir
-(os.path.dirname(os.path.realpath(__file__)))
+print(os.path.dirname(os.path.realpath(__file__)))
+
+MODEL_PATH = 'models'
+
+# Load pickles
+print('Pickles loading ...')
+with open(f'{MODEL_PATH}/tf_idf.pickle', 'rb') as f:
+    tf_idf = pickle.load(f)
+with open(f'{MODEL_PATH}/scaler.pickle', 'rb') as f:
+    scaler = pickle.load(f)
+with open(f'{MODEL_PATH}/model.pickle', 'rb') as f:
+    model = pickle.load(f)
+print('Pickles loaded.')
 
 # Define port
 port = int(os.environ.get('PORT', 8000))
@@ -53,17 +65,5 @@ def predict():
 
 
 if __name__ == '__main__':
-
-    MODEL_PATH = 'models'
-
-    # Load pickles
-    print('Pickles loading ...')
-    with open(f'{MODEL_PATH}/tf_idf.pickle', 'rb') as f:
-        tf_idf = pickle.load(f)
-    with open(f'{MODEL_PATH}/scaler.pickle', 'rb') as f:
-        scaler = pickle.load(f)
-    with open(f'{MODEL_PATH}/model.pickle', 'rb') as f:
-        model = pickle.load(f)
-    print('Pickles loaded.')
 
     app.run(host='0.0.0.0', port=port, debug=True)
