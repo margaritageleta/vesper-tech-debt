@@ -4,6 +4,9 @@ import pickle
 from flask import Flask, request, render_template
 import numpy as np
 import pandas as pd
+import os
+
+port = int(os.environ.get('PORT', 8000))
 
 # Initialize
 app = Flask(__name__, static_url_path = '', static_folder = 'static')
@@ -57,4 +60,4 @@ if __name__ == '__main__':
     with open(f'{MODEL_PATH}/model.pickle', 'rb') as f:
         model = pickle.load(f)
 
-    app.run()
+    app.run(host='0.0.0.0', port=port, debug=True)
