@@ -71,7 +71,10 @@ if __name__ == "__main__":
     # Standardize features by removing the mean and scaling to unit variance.
     scaler = StandardScaler()
     scaler.fit(df[['lines','commentLines','duplicatedLines']])
-    df[['lines','commentLines','duplicatedLines']] = scaler.fit_transform(df[['lines','commentLines','duplicatedLines']])
+    df[['lines','commentLines','duplicatedLines']] = scaler.transform(df[['lines','commentLines','duplicatedLines']])
+
+    with open(f'{MODEL_PATH}/scaler.pickle', 'wb') as f:
+        pickle.dump(scaler, f)
 
     tf_idf = TfidfVectorizer(min_df = 20, max_df = 0.5, ngram_range = (1, 3), max_features = 5000, stop_words = 'english')
     tf_idf.fit(df['commitMessageClean'])
@@ -100,6 +103,7 @@ if __name__ == "__main__":
     train_predictions = clf.predict_proba(X_test)
     print(f'Log Loss: {log_loss(Y_test, train_predictions)}')
 
+    """
     importances = clf.feature_importances_
     std = np.std([tree.feature_importances_ for tree in clf.estimators_],
                 axis=0)
@@ -119,6 +123,7 @@ if __name__ == "__main__":
     plt.xticks(range(X.shape[1]), indices)
     plt.xlim([-1, X.shape[1]])
     plt.show()
+    """
 
     with open(f'{MODEL_PATH}/model.pickle', 'wb') as f:
         pickle.dump(clf, f)
