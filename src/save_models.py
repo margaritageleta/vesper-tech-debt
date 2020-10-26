@@ -1,10 +1,12 @@
 
 import re
+import os
 import pickle
 import unicodedata
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from sklearn.utils import shuffle
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
@@ -65,6 +67,7 @@ if __name__ == "__main__":
             'class_blockerViolations', 'class_criticalViolations', 'class_mimaViolations',
             'complexity'
             ], axis = 1)
+    print(df.columns)
     df['commitMessageClean'] = df['commitMessage'].apply(lambda x: clean(x))
     df = df.drop_duplicates().copy()
 
@@ -91,9 +94,10 @@ if __name__ == "__main__":
     X = df.drop(['category'], axis = 1)
 
     seed = 123
+    X, Y = shuffle(X, Y)
     X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.4, random_state = seed)   
 
-    clf = RandomForestClassifier()
+    clf = DecisionTreeClassifier(max_depth = 12)
     clf.fit(X_train, Y_train)
 
     print('****Results****')
