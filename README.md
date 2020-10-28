@@ -4,9 +4,10 @@
 
 
 
+
 **Authors**: Dànae Canillas Sánchez, Alex Carrillo Alza, Margarita Geleta, Xavier Rubiés Cullell
 
-
+<img src='https://i.imgur.com/aKAerNT.png' height='555px'>
 
 
 
@@ -21,6 +22,8 @@
 Data processing, Model creation and App deployment of **Vesper Commit Severity Predictor**. Trained with data from the *Technical Debt Dataset*.
 
 The goal of the tool is to analyze a set of messages of various large open-source Java projects which used the Git version control system.
+
+
 
 
 
@@ -148,20 +151,32 @@ Then, if necessary, execute `model.ipynb` notebook to explore some results regar
 Finally, execute
 
 ```
-(vesper_env) $ python3 save_models.py
+(vesper_env) $ python3 src/save_models.py
 ```
 
 in order to save the **final model** `model.pickle` ,  the **tf-idf vectorizer** object `tf_idf.pickle` and the **StandardScaler** object `scaler.pickle` used on preprocessing the input for predictions.
 
 
 
-**3. **
+**3. Execute the app locally**
 
+To execute the app, just run:
+```
+(vesper_env) $ python3 src/app.py
+```
+Open the [0.0.0.0:8000](0.0.0.0:8000) in your browser to see the app.
 
 
 ## Contributing
+Please refer to each project's style and contribution guidelines for submitting patches and additions. In general,  we follow the *fork-and-pull* Git workflow:
 
+1. **Fork** the repo on GitHub.
+2. **Clone** the project to your own machine.
+3. **Commit** changes to your own branch.
+4. **Push** your work back up to your fork.
+5. Submit a **Pull request** so that we can review your changes.
 
+NOTE: be sure to merge the latest from *upstream* before making a pull request.
 
 ## License
-
+MIT © Vesper
