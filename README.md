@@ -1,29 +1,35 @@
 # Vesper Commit Severity Predictor
 
-[![HitCount](http://hits.dwyl.io/margaritageleta/vesper-tech-debt.svg)](http://hits.dwyl.io/margaritageleta/vesper-tech-debt)[![GitHub stars](https://img.shields.io/github/stars/margaritageleta/vesper-tech-debt.svg)](https://GitHub.com/margaritageleta/vesper-tech-debt/stargazers/)[![GitHub forks](https://img.shields.io/github/forks/margaritageleta/vesper-tech-debt.svg)](https://GitHub.com/margaritageleta/vesper-tech-debt/network/)[![GitHub repo size in bytes](https://img.shields.io/github/repo-size/margaritageleta/vesper-tech-debt.svg)](https://github.com/margaritageleta/vesper-tech-debt)[![GitHub contributors](https://img.shields.io/github/contributors/margaritageleta/vesper-tech-debt.svg)](https://GitHub.com/margaritageleta/vesper-tech-debt/graphs/contributors/)[![GitHub license](https://img.shields.io/github/license/margaritageleta/vesper-tech-debt.svg)](https://github.com/margaritageleta/vesper-tech-debt/blob/master/LICENSE)
-
+[![HitCount](http://hits.dwyl.io/margaritageleta/vesper-tech-debt.svg)](http://hits.dwyl.io/margaritageleta/vesper-tech-debt)  [![GitHub stars](https://img.shields.io/github/stars/margaritageleta/vesper-tech-debt.svg)](https://GitHub.com/margaritageleta/vesper-tech-debt/stargazers/)  [![GitHub forks](https://img.shields.io/github/forks/margaritageleta/vesper-tech-debt.svg)](https://GitHub.com/margaritageleta/vesper-tech-debt/network/)  [![GitHub repo size in bytes](https://img.shields.io/github/repo-size/margaritageleta/vesper-tech-debt.svg)](https://github.com/margaritageleta/vesper-tech-debt)  [![GitHub contributors](https://img.shields.io/github/contributors/margaritageleta/vesper-tech-debt.svg)](https://GitHub.com/margaritageleta/vesper-tech-debt/graphs/contributors/)  [![GitHub license](https://img.shields.io/github/license/margaritageleta/vesper-tech-debt.svg)](https://github.com/margaritageleta/vesper-tech-debt/blob/master/LICENSE)
 
 
 
 **Authors**: Dànae Canillas Sánchez, Alex Carrillo Alza, Margarita Geleta, Xavier Rubiés Cullell
 
-<img src='https://i.imgur.com/aKAerNT.png' height='555px'>
+*Universitat Politècnica de Catalunya, UPC*
+
+![](https://i.imgur.com/aKAerNT.png)
+
+Visit [vespertd.herokuapp.com](https://vespertd.herokuapp.com/) to access the app!
 
 
 
 ## Table of Contents
 
-
+1. [Description](#description)
+2. [Usage](#usage)
+3. [Project files](#Project files)
+4. [Execution steps](#Execution steps)
+5. [Contributing](#Contributing)
+6. [License](#License)
 
 
 
 ## Description
 
-Data processing, Model creation and App deployment of **Vesper Commit Severity Predictor**. Trained with data from the *Technical Debt Dataset*.
+This repository contains the development of the **Vesper Commit Severity Predictor** application, including the data processing, model creation and app deployment stages. The model is trained with data from the *Technical Debt Dataset*.
 
-The goal of the tool is to analyze a set of messages of various large open-source Java projects which used the Git version control system.
-
-
+> […] The goal of the tool is to predict the commit violations (of type “blocker”, “critical” and “major or minor”) using the commit message text along with some other numeric variables that help. [...]
 
 
 
@@ -112,7 +118,6 @@ This will install a kernel inside the environment, to use to run in the Jupyter 
 │  │  └─ style.css
 │  ├─ templates
 │  │  └─ index.html
-│  ├─ Procfile
 │  ├─ README.md
 │  ├─ analyze.py
 │  ├─ app.py
@@ -167,6 +172,8 @@ To execute the app, just run:
 Open the [0.0.0.0:8000](0.0.0.0:8000) in your browser to see the app.
 
 
+
+
 ## Contributing
 Please refer to each project's style and contribution guidelines for submitting patches and additions. In general,  we follow the *fork-and-pull* Git workflow:
 
@@ -177,6 +184,8 @@ Please refer to each project's style and contribution guidelines for submitting 
 5. Submit a **Pull request** so that we can review your changes.
 
 NOTE: be sure to merge the latest from *upstream* before making a pull request.
+
+
 
 ## License
 MIT © Vesper
