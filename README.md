@@ -18,10 +18,11 @@ Visit [vespertd.herokuapp.com](https://vespertd.herokuapp.com/) to access the ap
 
 1. [Description](#description)
 2. [Usage](#usage)
-3. [Project files](#Project-files)
-4. [Execution steps](#Execution-steps)
-5. [Contributing](#Contributing)
-6. [License](#License)
+   1. [Virtual environment setup](#Virtual-environment-setup)
+   2. [Project files](#Project-files)
+   3. [Execution steps](#Execution-steps)
+3. [Contributing](#Contributing)
+4. [License](#License)
 
 
 
@@ -86,7 +87,9 @@ With the environment activated:
 (vesper_env) $ pip freeze -l > requirements.txt 
 ```
 
-### Install a Jupyter kernel
+
+
+#### Install a Jupyter kernel
 
 This will install a kernel inside the environment, to use to run in the Jupyter notebook there:
 
