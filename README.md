@@ -18,8 +18,8 @@ Visit [vespertd.herokuapp.com](https://vespertd.herokuapp.com/) to access the ap
 
 1. [Description](#description)
 2. [Usage](#usage)
-3. [Project files](#Project files)
-4. [Execution steps](#Execution steps)
+3. [Project files](#Project-files)
+4. [Execution steps](#Execution-steps)
 5. [Contributing](#Contributing)
 6. [License](#License)
 
